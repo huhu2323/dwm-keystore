@@ -23,6 +23,14 @@ export default {
         cmd: 'HELP',
         help: 'Command to print all existing command.'
     },
+    logs: {
+        cmd: 'LOGS',
+        help: 'Shows logs of all things'
+    },
+    arith: {
+        cmd: 'ARITH',
+        help: 'Makes arithmetic command to two values'
+    },
     exit: {
         cmd: 'EXIT',
         help: 'Command to stop application.'

@@ -5,9 +5,12 @@ import {
     flushCommand, 
     getCommand,
     helpCommand,
-    setCommand } from './methods.js'
+    logsCommand,
+    setCommand,
+    arithmeticCommand } from './methods.js'
 import commands from './commands.js'
 import readline from 'readline'
+import { logs } from './storage.js';
 
 
 /**
@@ -33,7 +36,8 @@ const asyncLoopInput = () => {
         let command = cmd.split(' ')[0]
         let key = cmd.split(' ')[1]
         let val = cmd.split(' ')[2]
-
+        let extra = cmd.split(' ')[3]
+        
         // Commands main conditions
         switch(command) {
             case commands.set.cmd:
@@ -49,7 +53,7 @@ const asyncLoopInput = () => {
                 asyncLoopInput();
                 break;
             case commands.flush.cmd:
-                flushCommand();
+                flushCommand(key, val);
                 asyncLoopInput();
                 break;
             case commands.exit.cmd:
@@ -59,11 +63,22 @@ const asyncLoopInput = () => {
                 helpCommand();
                 asyncLoopInput();
                 break;
+            case commands.logs.cmd:
+                logsCommand();
+                asyncLoopInput();
+                break;
+            case commands.arith.cmd:
+                arithmeticCommand(key, val, extra);
+                asyncLoopInput();
+                break;
             default:
                 defaultCommand();
                 asyncLoopInput();
                 break;
         }
+        
+        // Save to logs
+        logs.push(cmd);
     })
 }
 
