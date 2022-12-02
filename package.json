@@ -1,0 +1,12 @@
+{
+  "name": "dwm-exam",
+  "version": "1.0.0",
+  "description": "A key-store system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "James",
+  "license": "ISC",
+  "type": "module"
+}
