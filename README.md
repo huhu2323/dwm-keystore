@@ -4,9 +4,10 @@ A JS value storage system.
 
 ## Pre-requisites
 
-Please install NodeJS 16.xx or above
-
+Please install NodeJS 16.xx or above-
 [NodeJS Download Link](https://nodejs.org/en/download/)
+This app does not have any dependency package but to make sure, run:
+`npm install` 
 
 ## Usage
 ```bash
